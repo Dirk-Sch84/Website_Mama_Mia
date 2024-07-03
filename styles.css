@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+/* import nur für Privaten gebrauch!!! für gewerblich muss es gedownloader werden!!!*/
+
+/*.platzhalter {
+  height: 300vh; Platzhalter zum scrollen
+}*/
+
+* {
+  margin: 0; /* entfernt bei allen Elementen der Seite Margin */
+  padding: 0; /* entfernt bei allen Elementen der Seite Padding */
+}
+
+body {
+  background-color: #1a1a1a; /* komplette hintergrundfarbe ändern*/
+  color: #fff; /* alle Schriftfarben in eine Farbe änder*/
+  font-family: "Inter", sans-serif; /*alle Schriftarten*/
+
+  --primary-color: #ff3030; /*eine Variable mit der man alle Farben auf einmal ändert!!!,
+  farbe markieren (strg+F) dann auf den Pfleil und var(--primary-color) 
+  danach den wert wieder auf die Farbe setzten!!! */
+
+  --second-color-text: #ddd; /* siehe oben*/
+}
+/* navigations schaltfächen */
+.nav {
+  display: flex; /*alle .item(nav) Elemente werden gleichmaßig verteilt*/
+  justify-content: center; /* vertikale elemente ausrichten (spiegeln)*/
+  align-items: center; /* horizontale ausrichtung*/
+  gap: 1rem; /*zwischen Wörtern einen abstand */
+  height: 5rem; /*höhe der BOX*/
+  font-size: 0.8rem; /*Textgröße*/
+  text-align: center;
+} /* Textausrichtung in einer BOX*/
+
+.nav-item,
+.footer-item {
+  text-decoration: none; /* unterstrich entfernen*/
+  color: #fff; /* schriftfarbe */
+  text-transform: uppercase; /*den gesamten Text hochgestellt*/
+  letter-spacing: 0.1rem; /* abstand zwischen den Buchstaben des Textes*/
+  transition: color 0.2s ease-in-out; /*die geschwindigeit der einfärung des Textes*/
+}
+
+.nav-item:hover,
+.footer-item:hover {
+  /* mit der maus über etwas schweben dann veränderng des Buttons*/
+  color: var(--primary-color);
+}
+
+/* Hintergrundeinstellungen*/
+.hero {
+  height: calc(100vh - 5rem); /*100vh = 100% des Monitors*/
+  display: flex; /*Flexbox unter F12-flex kann man die Position betimmen und dann einfügen*/
+  flex-direction: column; /*aus F12 übernommen "display:flex*/
+  align-items: center; /*aus F12 übernommen "display:flex*/
+  justify-content: center; /*aus F12 übernommen "display:flex*/
+  text-align: center; /*aus F12 übernommen "display:flex*/
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+      /*Transparenz; eine zweite schicht über das Bild legen*/,
+    url("./images/Hero.jpg"); /* ablage Ort des Bildes;linearer Farbverlauf von unten nach oben*/
+  background-position: center; /*Hintergrund Pos. zentriert*/
+  background-size: cover; /* cover bringt das Bild auf Optimale Göße*/
+  background-repeat: no-repeat; /* falls das bild kleiner ist, sich nicht wiederholt*/
+}
+
+.title {
+  margin: 0 0 1rem 0; /* rechts, links, oben, unten*/
+  font-size: 3rem; /*3x so groß wie standard (16px) große des Textes*/
+  line-height: 3rem; /*3x so groß wie standard (16px) linien abstand*/
+  font-family: "Lobster", sans-serif; /*Schriftart*/
+}
+
+.subtitle {
+  font-size: 1rem; /* bei einem rem kann es auch entfallen Text-größe*/
+  color: var(--second-color); /* schriftfarbe bei subtitel geändert*/
+}
+
+.hero-action {
+  margin-top: 4rem; /* 4x Box nach oben*/
+}
+
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.button,
+.button-inverted {
+  width: fit-content;
+  display: inline-block;
+  padding: 1rem 2rem; /* Padding 1x oben/unten 2x links/rechts*/
+  border: 4px solid var(--primary-color); /*rand hinzugefügt*/
+  color: #fff; /* schriftfarbe */
+  text-decoration: none; /*keine unterstreichung, durchstreichen, vierzierungen*/
+  background-color: var(--primary-color); /*Hintergrundfarbe vom Button*/
+  transition: all 0.2s ease-in-out; /*ein und ausblenden von rot ins transparent*/
+}
+
+.button-inverted {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.button:hover {
+  /* mit der maus über etwas schweben dann veränderng des Buttons*/
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.button-inverted:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.heading {
+  margin: 2rem 0 1rem 0;
+  width: fit-content; /* macht das Element nur so breit wie die schrift*/
+  text-transform: uppercase; /*alles in Großbuchstaben*/
+  letter-spacing: 0.1rem; /* abstand zwischen den Buchstaben des Textes*/
+  border-bottom: 1px solid var(--primary-color); /*linie unter dem Inhalt*/
+}
+
+.open {
+  margin: auto;
+}
+
+.about {
+  display: grid;
+  gap: 2rem;
+}
+
+.text {
+  color: var(--second-color);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.about-action {
+  margin-top: 2rem;
+}
+
+.about-images {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-images-small {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-image-large {
+  min-width: 50%;
+}
+
+.info-wrapper {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("./images/info.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.info .heading {
+  margin: 0 auto;
+}
+
+.hours-entry {
+  display: flex;
+  justify-content: space-between;
+  width: 15rem;
+}
+
+.days {
+  color: var(--second-color-text);
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .heading {
+  margin-top: 0;
+}
+
+.contact-detail {
+  margin: 0.5rem;
+  color: var(--second-color-text);
+}
+
+.contact-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-image {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  background-color: #303030;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  margin-top: 1rem;
+  color: var(--second-color-text);
+}
+
+@media only screen and (min-width: 600px) {
+  /* ab gewissen größen wie es sich verändern soll*/
+  .nav,
+  .footer-links {
+    /* in das jeweilige .item gehen*/
+    gap: 2rem; /* abstand zwischen den Zeichen*/
+    font-size: 1rem; /* schriftgöße wieder auf standard */
+  }
+
+  .footer {
+    margin-top: 4rem;
+    padding: 3rem 0;
+    gap: 3rem;
+  }
+
+  .footer-links {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .button,
+  .button-inverted {
+    padding: 1.2rem 2.5rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+
+  .contact-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact-image {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  /* ab gewissen größen wie es sich verändern soll*/
+  .nav,
+  .footer-links {
+    gap: 4rem;
+  }
+
+  .footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+  }
+
+  .title {
+    font-size: 8rem;
+    line-height: 6.5rem;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6rem;
+    align-items: center;
+  }
+  .about-images,
+  .about-images-small {
+    gap: 1rem;
+  }
+
+  .hours-entry {
+    width: 20rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hours {
+    margin-top: 2rem;
+  }
+
+  .info-wrapper {
+    margin: 8rem 0;
+    padding: 6rem;
+  }
+
+  .contact,
+  .heading {
+    margin-bottom: 2rem;
+  }
+
+  .contact-detail {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .contact-actions {
+    flex-direction: row;
+  }
+
+  .contact-image {
+    width: 50%;
+  }
+}
+/*@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 70%;
+  }
+  .nav,
+  .footer-links {
+    gap: 8rem;
+    font-size: 3.5rem;
+    height: 8rem;
+    align-items: center;
+  }
+
+  .footer {
+    margin: 3rem 0;
+  }
+
+  .footer-copyright {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 12rem;
+    line-height: 12rem;
+  }
+  .heading {
+    font-size: 6rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6rem;
+    align-items: center;
+  }
+  .about-images,
+  .about-images-small {
+    gap: 2rem;
+  }
+  .text {
+    font-size: 2.8rem;
+  }
+  .subtitle {
+    font-size: 3rem;
+  }
+  .button {
+    font-size: 3rem;
+  }
+
+  .hours-entry {
+    width: 40rem;
+    font-size: 4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hours {
+    margin-top: 4rem;
+  }
+
+  .info-wrapper {
+    margin: 15rem 0;
+    padding: 12rem;
+  }
+
+  .contact-details {
+    font-size: 3.5rem;
+  }
+
+  .contact-detail {
+    font-size: 3rem;
+  }
+
+  .button-inverted {
+    margin-left: 1.5rem;
+  }
+}*/
